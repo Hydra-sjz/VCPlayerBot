@@ -1,11 +1,10 @@
-echo "Cloning Repo...."
-if [ -z $BRANCH ]
+if [ -z $UPSTREAM_REPO ]
 then
-  echo "Cloning main branch...."
-  git clone https://github.com/Hydra-sjz/VCPlayerX /VCPlayerX
+  echo "Cloning main Repository"
+  git clone https://github.com/Hydra-sjz/VCPlayerX.git /VCPlayerX
 else
-  echo "Cloning $BRANCH branch...."
-  git clone https://github.com/Hydra-sjz/VCPlayerX -b $BRANCH /VCPlayerX
+  echo "Cloning Custom Repo from $UPSTREAM_REPO "
+  git clone $UPSTREAM_REPO /VCPlayerX
 fi
 cd /VCPlayerX
 pip3 install -U -r requirements.txt
