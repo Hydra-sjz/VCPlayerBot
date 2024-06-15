@@ -18,11 +18,10 @@ from config import Config
 from utils import LOGGER
 
 USER = Client(
-    Config.SESSION,
-    Config.API_ID,
-    Config.API_HASH,
+    name="VCPlayerX",
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    session_string=Config.SESSION,
     plugins=dict(root="userplugins")
     )
 group_call = PyTgCalls(USER, cache_duration=180)
-
-
